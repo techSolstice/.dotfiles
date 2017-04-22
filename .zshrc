@@ -83,4 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="~/.composer/vendor/bin:/usr/local/bin:$PATH"
+
+if [ `uname -s` = 'Darwin' ] ; then
+    export PATH="~/.composer/vendor/bin:/usr/local/bin:$PATH"
+fi
