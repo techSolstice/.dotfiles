@@ -26,6 +26,7 @@ NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'c.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
+NeoBundle 'jistr/vim-nerdtree-tabs'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
@@ -38,7 +39,11 @@ filetype plugin indent on
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeTabsToggle<CR>
+let g:nerdtree_tabs_open_on_console_startup = 1
+
+set backspace=indent,eol,start
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 set laststatus=2
