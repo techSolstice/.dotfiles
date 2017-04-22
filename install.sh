@@ -8,3 +8,5 @@ curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.s
 sh ~/neobundle.sh
 rm ~/neobundle.sh
 
+ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/.vimrc ~/.vimrc
