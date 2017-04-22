@@ -41,6 +41,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 map <C-n> :NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_console_startup = 1
+let NERDTreeShowHidden=1
 
 set backspace=indent,eol,start
 
