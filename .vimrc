@@ -26,6 +26,7 @@ call neobundle#end()
 
 " Required:
 filetype plugin indent on
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
