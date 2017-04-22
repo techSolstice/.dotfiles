@@ -15,6 +15,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'editorconfig/editorconfig-vim'
 
 
 " My Bundles here:
@@ -25,12 +26,6 @@ call neobundle#end()
 
 " Required:
 filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
