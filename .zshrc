@@ -85,5 +85,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if [ `uname -s` = 'Darwin' ] ; then
-    export PATH="~/.composer/vendor/bin:/usr/local/bin:$PATH"
+    export PATH="$HOME/.composer/vendor/bin:/usr/local/bin:$PATH"
 fi
