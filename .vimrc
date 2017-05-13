@@ -26,6 +26,8 @@ NeoBundle 'c.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle 'stanangeloff/php.vim'
+NeoBundle 'shawncplus/phpcomplete.vim'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
@@ -64,3 +66,13 @@ syntax on
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
+
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
