@@ -86,4 +86,8 @@ source $ZSH/oh-my-zsh.sh
 
 if [ `uname -s` = 'Darwin' ] ; then
     export PATH="$HOME/.composer/vendor/bin:/usr/local/bin:$PATH"
+else
+    export CC=/usr/bin/clang
+    export CXX=/usr/bin/clang++
 fi
+

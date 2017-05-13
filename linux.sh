@@ -8,11 +8,19 @@ sudo apt-get update
 
 sudo apt-get install zsh vim-nox cmake build-essential qbittorrent calibre steam terminator php7.0 php7.0-common php7.0-cli composer spotify-client nodejs
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb ~/Downloads/
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
-sudo dpkg -i ~/Downloads/google-chrome-stable_current_amd64.deb
+wget https://github.com/atom/atom/releases/download/v1.16.0/atom-amd64.deb
+
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+sudo dpkg -i atom-amd64.deb
 
 sudo apt-get -f install
+
+rm google-chrome-stable_current_amd64.deb
+
+rm atom-amd64.deb
 
 mkdir -p ~/.config/terminator
 

@@ -1,0 +1,16 @@
+"*":
+  core:
+    disabledPackages: [
+      "whitespace"
+    ]
+    telemetryConsent: "limited"
+  editor:
+    preferredLineLength: 160
+    tabLength: 4
+  "exception-reporting":
+    userId: "ba950dac-59e0-4e23-aef0-730f69e06c62"
+  "linter-ui-default":
+    panelHeight: 342
+    showPanel: true
+  welcome:
+    showOnStartup: false
