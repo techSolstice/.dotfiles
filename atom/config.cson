@@ -1,4 +1,6 @@
 "*":
+  "atom-autocomplete-php":
+    binComposer: "/usr/bin/composer"
   core:
     disabledPackages: [
       "whitespace"
