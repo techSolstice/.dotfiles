@@ -1,4 +1,4 @@
-sudo apt-get install zsh fonts-powerline steam tmux php composer php7.0-sqlite3 arc-theme php-common curl wget apt-transport-https qbittorrent numlockx alacarte openjdk-8-jdk openjdk-8-jre
+sudo apt-get install zsh fonts-powerline steam tmux curl wget apt-transport-https qbittorrent numlockx openjdk-8-jdk openjdk-8-jre
 
 curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 
@@ -11,5 +11,13 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 sudo apt-get update
 
 sudo apt-get install syncthing spotify-client
+
+wget https://dl.discordapp.net/apps/linux/0.0.1/discord-0.0.1.deb
+
+sudo dpkg -i discord-*.deb
+
+sudo apt-get -f install
+
+rm discord-*.deb
 
 
