@@ -1,4 +1,4 @@
-sudo apt-get install zsh fonts-powerline steam tmux curl wget apt-transport-https qbittorrent numlockx openjdk-8-jdk openjdk-8-jre
+sudo apt-get install zsh fonts-powerline steam tmux curl wget apt-transport-https qbittorrent numlockx openjdk-8-jdk openjdk-8-jre php7.0 composer
 
 curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 
@@ -19,5 +19,3 @@ sudo dpkg -i discord-*.deb
 sudo apt-get -f install
 
 rm discord-*.deb
-
-
