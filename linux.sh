@@ -1,4 +1,4 @@
-sudo apt-get -y install zsh fonts-powerline steam tmux curl wget apt-transport-https qbittorrent numlockx net-tools php7.0 php7.0-dom composer
+sudo apt-get -y install zsh fonts-powerline steam tmux curl wget apt-transport-https qbittorrent numlockx net-tools php7.0 php7.0-xml composer
 
 curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 
