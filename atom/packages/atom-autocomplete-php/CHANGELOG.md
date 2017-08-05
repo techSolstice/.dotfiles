@@ -1,3 +1,14 @@
+## 0.25.0
+* You can now reindex the project with the command "reindexing project" (the project is reindexed by default when you open a new window of your project)
+
+## 0.24.0
+* Default keybinding for goto-backtrack changed to ctrl-shift-g (to not override windows/linux keybindings)
+* Ability to change the key to press with "click" in package settings
+
+## 0.23.0
+* Multiple bug fixes
+* Import use of a selected class outside completion by @fuelingtheweb (see #338) (shortcut : ctrl-alt-u)
+
 ## 0.22.0
 * Support for `@property` and `@method` annotations (#318)
 

@@ -10,11 +10,13 @@ atom-autocomplete-php provides autocompletion for the PHP language for projects 
   * Tooltips for methods, classes, etc. that display information about the item itself.
   * IntellJ-style variable annotations `/** @var MyType $var */` as well as `/** @var $var MyType */`.
   * Shortcut variable annotations (must appear right above the respective variable) `/** @var MyType */`.
+  * Add use statement of class under cursor (ctrl-alt-u)
   * ...
 
 ## What do I need to do to make it work?
 Currently the following limitations or restrictions are present:
   * You must use [Composer](https://getcomposer.org/) for dependency management.
+  * You must have PHP 5.5+ with xml extension installed.
   * You must follow the PSR standards (for the names of classes, methods, namespacing, etc.).
   * You must write proper docblocks for your methods. There currently is no standard around this, but we try to follow the draft PSR-5 standard (which, in turn, is mostly inspired by phpDocumentor's implementation). Minimum requirements for proper autocompletion:
     * `@return` statements for functions and methods.
@@ -44,7 +46,7 @@ You can test your configuration by using a command (cmd - shift - p) : ```Atom A
 ## CMS integration
   * Built-in support for Drupal 6/7 functions
 
-## Framework integration
+## Framework integration
   * [Symfony2 plugin](https://github.com/Peekmo/atom-symfony2)
 
 ## What Does Not Work?

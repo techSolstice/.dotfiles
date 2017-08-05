@@ -1,5 +1,6 @@
 fs = require 'fs'
 namespace = require './services/namespace.coffee'
+useStatement = require './services/use-statement.coffee'
 StatusInProgress = require "./services/status-in-progress.coffee"
 StatusErrorAutocomplete = require "./services/status-error-autocomplete.coffee"
 
@@ -21,6 +22,7 @@ module.exports =
         @config['composer'] = atom.config.get('atom-autocomplete-php.binComposer')
         @config['php'] = atom.config.get('atom-autocomplete-php.binPhp')
         @config['autoload'] = atom.config.get('atom-autocomplete-php.autoloadPaths')
+        @config['gotoKey'] = atom.config.get('atom-autocomplete-php.gotoKey')
         @config['classmap'] = atom.config.get('atom-autocomplete-php.classMapFiles')
         @config['packagePath'] = atom.packages.resolvePackagePath('atom-autocomplete-php')
         @config['verboseErrors'] = atom.config.get('atom-autocomplete-php.verboseErrors')
@@ -102,6 +104,15 @@ module.exports =
         atom.commands.add 'atom-workspace', 'atom-autocomplete-php:namespace': =>
             namespace.createNamespace(atom.workspace.getActivePaneItem())
 
+        # Command for importing use statement
+        atom.commands.add 'atom-workspace', 'atom-autocomplete-php:import-use-statement': =>
+            useStatement.importUseStatement(atom.workspace.getActivePaneItem())
+
+        # Command to reindex the current project
+        atom.commands.add 'atom-workspace', 'atom-autocomplete-php:reindex-project': ->
+            proxy = require './services/php-proxy.coffee'
+            proxy.refresh()
+
         # Command to test configuration
         atom.commands.add 'atom-workspace', 'atom-autocomplete-php:configuration': =>
             @testConfig(true)
@@ -117,6 +128,9 @@ module.exports =
             @testConfig(true)
 
         atom.config.onDidChange 'atom-autocomplete-php.autoloadPaths', () =>
+            @writeConfig()
+
+        atom.config.onDidChange 'atom-autocomplete-php.gotoKey', () =>
             @writeConfig()
 
         atom.config.onDidChange 'atom-autocomplete-php.classMapFiles', () =>
