@@ -1,4 +1,4 @@
-sudo apt-get install zsh fonts-powerline steam tmux curl wget apt-transport-https qbittorrent numlockx openjdk-8-jdk openjdk-8-jre php7.0 composer
+sudo apt-get -y install zsh fonts-powerline steam tmux curl wget apt-transport-https qbittorrent numlockx net-tools php7.0 php7.0-dom composer
 
 curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 
@@ -8,14 +8,20 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB31
 
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 
-sudo apt-get update
+sudo apt-get -y update
 
-sudo apt-get install syncthing spotify-client
+sudo apt-get -y install syncthing spotify-client
 
 wget https://dl.discordapp.net/apps/linux/0.0.1/discord-0.0.1.deb
 
+wget https://installers.privateinternetaccess.com/download/pia-v72-installer-linux.tar.gz
+
 sudo dpkg -i discord-*.deb
 
-sudo apt-get -f install
+sudo apt-get -f -y install
 
-rm discord-*.deb
+tar -xzf pia-v*-installer-linux.tar.gz
+
+./pia-v*-installer-linux.sh
+
+rm discord-*.deb pia-v*
