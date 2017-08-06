@@ -91,3 +91,4 @@ else
     export CXX=/usr/bin/clang++
 fi
 
+export COMPOSER_DISABLE_XDEBUG_WARN=1
