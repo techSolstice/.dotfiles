@@ -10,9 +10,11 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 
 sudo add-apt-repository -y ppa:ondrej/php
 
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+
 sudo apt-get -y update
 
-sudo apt-get -y install syncthing spotify-client php7.1-fpm php7.1 php7.1-xml php7.1-sqlite3 php7.1-xdebug php7.1-common
+sudo apt-get -y install syncthing spotify-client php7.1-fpm php7.1 php7.1-xml php7.1-sqlite3 php7.1-xdebug php7.1-common nodejs
 
 wget https://dl.discordapp.net/apps/linux/0.0.1/discord-0.0.1.deb
 
