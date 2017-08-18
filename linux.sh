@@ -10,13 +10,15 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 
 sudo add-apt-repository -y ppa:ondrej/php
 
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo add-apt-repository -y ppa:system76/pop
 
-sudo apt-get -y update
+sudo add-apt-repository -y ppa:webupd8team/java
 
-sudo apt-get -y install syncthing spotify-client php7.1-fpm php7.1 php7.1-xml php7.1-sqlite3 php7.1-xdebug php7.1-common nodejs
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 
-wget https://dl.discordapp.net/apps/linux/0.0.1/discord-0.0.1.deb
+sudo apt-get -y install syncthing spotify-client php7.1-fpm php7.1 php7.1-xml php7.1-sqlite3 php7.1-xdebug php7.1-common nodejs pop-theme oracle-java8-installer
+
+wget https://dl.discordapp.net/apps/linux/0.0.2/discord-0.0.2.deb
 
 wget https://installers.privateinternetaccess.com/download/pia-v72-installer-linux.tar.gz
 
