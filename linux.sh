@@ -18,16 +18,12 @@ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 
 sudo apt-get -y install syncthing spotify-client php7.1-fpm php7.1 php7.1-xml php7.1-sqlite3 php7.1-xdebug php7.1-common nodejs pop-theme oracle-java8-installer
 
-wget https://dl.discordapp.net/apps/linux/0.0.2/discord-0.0.2.deb
+sudo snap install discord
 
 wget https://installers.privateinternetaccess.com/download/pia-v72-installer-linux.tar.gz
 
-sudo dpkg -i discord-*.deb
+tar -xzf pia-v72-installer-linux.tar.gz
 
-sudo apt-get -f -y install
+./pia-v72-installer-linux.sh
 
-tar -xzf pia-v*-installer-linux.tar.gz
-
-./pia-v*-installer-linux.sh
-
-rm discord-*.deb pia-v*
+rm ./pia-v72-installer-linux.sh
