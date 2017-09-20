@@ -1,4 +1,6 @@
-sudo apt-get -y install zsh fonts-powerline steam tmux curl wget apt-transport-https qbittorrent numlockx net-tools meld calibre
+sudo apt-get update -y 
+
+sudo apt-get -y install zsh fonts-powerline steam tmux curl wget apt-transport-https qbittorrent numlockx net-tools meld calibre arc-theme
 
 curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 
@@ -10,13 +12,15 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 
 sudo add-apt-repository -y ppa:ondrej/php
 
-sudo add-apt-repository -y ppa:system76/pop
+sudo add-apt-repository -y ppa:noobslab/icons
+
+sudo add-apt-repository -y ppa:noobslab/themes
 
 sudo add-apt-repository -y ppa:webupd8team/java
 
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 
-sudo apt-get -y install syncthing spotify-client php7.1-fpm php7.1 php7.1-xml php7.1-sqlite3 php7.1-xdebug php7.1-common php7.1-mbstring php7.1-curl nodejs pop-theme oracle-java8-installer
+sudo apt-get -y install syncthing spotify-client php7.1-fpm php7.1 php7.1-xml php7.1-sqlite3 php7.1-xdebug php7.1-common php7.1-mbstring php7.1-curl php7.1-gd php7.1-opcache nodejs oracle-java8-installer flat-remix-icons
 
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 
