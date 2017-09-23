@@ -1,6 +1,6 @@
-sudo apt-get update -y 
+sudo apt-get update -y
 
-sudo apt-get -y install zsh fonts-powerline steam tmux curl wget apt-transport-https qbittorrent numlockx net-tools meld calibre arc-theme
+sudo apt-get -y install zsh fonts-powerline steam tmux curl wget apt-transport-https qbittorrent numlockx net-tools meld calibre arc-theme vim-nox-py2
 
 curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 
@@ -28,9 +28,9 @@ php -r "if (hash_file('SHA384', 'composer-setup.php') === '669656bab3166a7aff8a7
 
 sudo php composer-setup.php --install-dir=/usr/bin --filename=composer
 
-php -r "unlink('composer-setup.php');"
+suod chmod +x /usr/bin/composer
 
-sudo snap install discord
+php -r "unlink('composer-setup.php');"
 
 wget https://installers.privateinternetaccess.com/download/pia-v72-installer-linux.tar.gz
 
