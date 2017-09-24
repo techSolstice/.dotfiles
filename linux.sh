@@ -1,6 +1,6 @@
 sudo apt-get update -y
 
-sudo apt-get -y install zsh fonts-powerline steam tmux curl wget apt-transport-https qbittorrent numlockx net-tools meld calibre arc-theme vim-nox-py2
+sudo apt-get -y install zsh fonts-powerline steam tmux curl wget apt-transport-https qbittorrent numlockx net-tools meld calibre arc-theme vim-nox
 
 curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 
@@ -38,4 +38,4 @@ tar -xzf pia-v72-installer-linux.tar.gz
 
 ./pia-v72-installer-linux.sh
 
-rm ./pia-v72-installer-linux.sh
+rm ./pia-v72-installer-linux*
