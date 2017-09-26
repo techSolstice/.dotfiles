@@ -18,6 +18,6 @@ mkdir -p ~/.vim/bundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.vimrc ~/.vimrc
+ln -s ~/.dotfiles/.vimrc ~/.config/nvim/init.vim
 
 chsh -s /bin/zsh
