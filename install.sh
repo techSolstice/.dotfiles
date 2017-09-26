@@ -14,6 +14,7 @@ git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 rm ~/.zshrc 2>&1 > /dev/null
 
 mkdir -p ~/.vim/bundle
+mkdir -p ~/.config/nvim
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
