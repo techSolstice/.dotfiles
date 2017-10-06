@@ -1,7 +1,9 @@
+#!/bin/bash
+
 if [ `uname -s` = 'Darwin' ]; then
-    sh ./osx.sh
+    ./osx.sh
 else
-    sh ./linux.sh
+    ./linux.sh
 fi
 
 git config --global user.email $1
