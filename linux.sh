@@ -1,20 +1,11 @@
 #!/bin/bash
 
-sudo dnf upgrade -y
+sudo pacman -Syu
 
-if [ -z "$INSTALLNVIDIA" ];
-then
-	sudo dnf config-manager -y --add-repo=https://negativo17.org/repos/fedora-nvidia.repo
-	sudo dnf install -y nvidia-settings kernel-devel dkms-nvidia vulkan.i686 nvidia-driver-libs.i686
-fi
+sudo pacman -S --needed --noconfirm vim calibre gnome-tweak-tool powerline-fonts zsh qbittorrent php meld docker docker-compose composer wget screenfetch thunderbird
 
-sudo dnf config-manager -y --add-repo=https://negativo17.org/repos/fedora-spotify.repo
-sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf copr enable -y tcg/discord
+gpg --recv-keys 0FC3042E345AD05D
 
-sudo dnf install -y steam spotify-client vim calibre arc-theme gnome-tweak-tool powerline-fonts zsh qbittorrent shutter php meld google-chrome docker docker-compose f26-backgrounds-animated composer php-pecl-xdebug php-pecl-event wget screenfetch thunderbird Discord-installer
+yaourt -S --needed --noconfirm google-chrome spotify discord chrome-gnome-shell-git
 
-cd /tmp && rm -rf Flat-Remix && git clone https://github.com/daniruiz/Flat-Remix && mkdir -p ~/.icons && cp -r "Flat-Remix/Flat Remix" ~/.icons
-
-wget https://www.privateinternetaccess.com/installer/pia-nm.sh
-sudo bash pia-nm.sh
+cd /tmp && wget https://www.privateinternetaccess.com/installer/pia-nm.sh && sudo bash pia-nm.sh
