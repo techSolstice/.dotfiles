@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=autostart_vpn
+Exec=/home/codayblue/.dotfiles/scripts/connect-vpn.sh 4d77162a-5d6c-489c-9238-736aced517bf > /dev/null
+Terminal=false
