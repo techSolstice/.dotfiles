@@ -24,3 +24,7 @@ ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 
 chsh -s /bin/zsh
+
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+sudo php composer-setup.php --filename=composer --install-dir=/usr/bin
+php -r "unlink('composer-setup.php');"

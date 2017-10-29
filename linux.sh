@@ -1,11 +1,16 @@
 #!/bin/bash
 
-sudo pacman -Syu
+# SPOTIFY
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
 
-sudo pacman -S --needed --noconfirm vim calibre gnome-tweak-tool powerline-fonts zsh qbittorrent php meld docker docker-compose composer wget screenfetch thunderbird
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 
-gpg --recv-keys 0FC3042E345AD05D
+# PHP updated repo
+sudo add-apt-repository -y ppa:ondrej/php
 
-yaourt -S --needed --noconfirm google-chrome spotify discord chrome-gnome-shell-git
+# Read the repos
+sudo apt-get update -y
 
-cd /tmp && wget https://www.privateinternetaccess.com/installer/pia-nm.sh && sudo bash pia-nm.sh
+# install all the stuff
+sudo apt-get install fonts-powerline zsh meld steam calibre curl vim-nox qbittorrent php7.1-fpm php7.1 php7.1-common php7.1-curl php7.1-dom php7.1-xdebug php7.1-mbstring spotify-client
+
