@@ -10,6 +10,7 @@ git config --global user.email $1
 git config --global user.name $2
 git config --global diff.tool meld
 git config --global merge.tool meld
+git config --global core.excludesfile ~/.dotfiles/.gitignore_global
 
 git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 
