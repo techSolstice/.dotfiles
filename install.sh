@@ -1,17 +1,29 @@
 #!/bin/bash
 
+# Setup Pre Reqs
+sudo dpkg --add-architecture i386
+sudo apt update && apt install -y apt-transport-https lsb-release ca-certificates curl wget gnupg2 software-properties-common
+
+# Setup Repos
+# php
+sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list > /dev/null
+
+# Docker
+curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable"
+
+# Nodejs
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+
+# Syncthing
+curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+# Theme and Icons
+
 # Install all the apps I need
-sudo pacman --needed --noconfirm -S php rsync syncthing calibre qbittorrent docker docker-compose xfce4-goodies git vim meld zsh curl arc-gtk-theme papirus-icon-theme steam powerline-fonts
-
-# Include a key that is needed for discord below
-gpg --recv-keys 8F0871F202119294
-
-# Install AUR apps
-yaourt -S --noconfirm --needed google-chrome spotify discord visual-studio-code-bin slack-desktop
-
-wget -O /tmp/pia_nm.sh  https://www.privateinternetaccess.com/installer/pia-nm.sh
-sudo chmod +x /tmp/pia_nm.sh
-sudo /tmp/pia_nm.sh
+sudo apt update && sudo apt install -y php7.1 php7.1-fpm php7.1-common nodejs rsync syncthing calibre qbittorrent docker-ce xfce4-goodies git vim meld zsh arc-theme numix-icon-theme steam fonts-powerline snapd
 
 git config --global user.email $1
 git config --global user.name $2
