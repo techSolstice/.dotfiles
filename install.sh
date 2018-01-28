@@ -14,7 +14,7 @@ sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/dock
 curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 
 # Install all the apps I need
-sudo dnf install -y php php-fpm php-common nodejs rsync syncthing calibre qbittorrent docker-ce docker-compose chrome-gnome-shell git vim meld zsh arc-theme paper-icon-theme numix-icon-theme numix-icon-theme-circle steam powerline-fonts composer phpunit
+sudo dnf install -y php php-fpm php-common nodejs rsync syncthing calibre qbittorrent docker-ce docker-compose chrome-gnome-shell git vim meld zsh arc-theme paper-icon-theme numix-icon-theme numix-icon-theme-circle steam powerline-fonts composer phpunit gnome-tweak-tool
 
 git config --global user.email $1
 git config --global user.name $2
