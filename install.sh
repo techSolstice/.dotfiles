@@ -1,29 +1,20 @@
 #!/bin/bash
 
 # Setup Pre Reqs
-sudo dpkg --add-architecture i386
-sudo apt update && apt install -y apt-transport-https lsb-release ca-certificates curl wget gnupg2 software-properties-common
+sudo dnf -y install dnf-plugins-core
 
 # Setup Repos
-# php
-sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list > /dev/null
+# RPM Fusion
+sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # Docker
-curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable"
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 
 # Nodejs
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-
-# Syncthing
-curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
-echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
-
-# Theme and Icons
+curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 
 # Install all the apps I need
-sudo apt update && sudo apt install -y php7.1 php7.1-fpm php7.1-common nodejs rsync syncthing calibre qbittorrent docker-ce xfce4-goodies git vim meld zsh arc-theme numix-icon-theme steam fonts-powerline snapd
+sudo dnf install -y php php-fpm php-common nodejs rsync syncthing calibre qbittorrent docker-ce docker-compose chrome-gnome-shell git vim meld zsh arc-theme paper-icon-theme numix-icon-theme numix-icon-theme-circle steam powerline-fonts composer phpunit
 
 git config --global user.email $1
 git config --global user.name $2
@@ -45,6 +36,6 @@ ln -s ~/.dotfiles/.vimrc ~/.vimrc 2>&1 > /dev/null
 
 chsh -s /bin/zsh
 
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-sudo php composer-setup.php --filename=composer --install-dir=/usr/bin
-php -r "unlink('composer-setup.php');"
+#php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+#sudo php composer-setup.php --filename=composer --install-dir=/usr/bin
+#php -r "unlink('composer-setup.php');"
