@@ -1,20 +1,32 @@
 #!/bin/bash
 
 # Setup Pre Reqs
-sudo dnf -y install dnf-plugins-core
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
 
 # Setup Repos
-# RPM Fusion
-sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+# PHP
+sudo add-apt-repository -y ppa:ondrej/php
 
 # Docker
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
 # Nodejs
-curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+
+# Syncthing
+curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
 
 # Install all the apps I need
-sudo dnf install -y php php-fpm php-common nodejs rsync syncthing calibre qbittorrent docker-ce docker-compose chrome-gnome-shell git vim meld zsh arc-theme paper-icon-theme numix-icon-theme numix-icon-theme-circle steam powerline-fonts composer phpunit gnome-tweak-tool
+sudo apt update -y
+sudo apt install -y php7.1 php7.1-fpm php7.1-common nodejs rsync syncthing calibre qbittorrent docker-ce git vim meld zsh steam fonts-powerline meld
 
 git config --global user.email $1
 git config --global user.name $2
@@ -36,6 +48,6 @@ ln -s ~/.dotfiles/.vimrc ~/.vimrc 2>&1 > /dev/null
 
 chsh -s /bin/zsh
 
-#php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-#sudo php composer-setup.php --filename=composer --install-dir=/usr/bin
-#php -r "unlink('composer-setup.php');"
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+sudo php composer-setup.php --filename=composer --install-dir=/usr/bin
+php -r "unlink('composer-setup.php');"
