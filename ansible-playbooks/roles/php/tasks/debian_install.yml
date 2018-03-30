@@ -1,0 +1,19 @@
+- name: Install PHP
+  apt:
+    name: php{{ version }}
+
+- name: Install PHP common
+  apt:
+    name: php{{ version }}-common
+
+- name: Install PHP pdo
+  apt:
+    name: php{{ version }}-pdo
+
+- name: Install PHP pdo-sqlite
+  apt:
+    name: php{{ version }}-pdo-sqlite
+
+- name: Install PHP CURL
+  apt:
+    name: php{{ version }}-curl

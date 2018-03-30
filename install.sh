@@ -8,9 +8,6 @@ sudo apt-get install \
     software-properties-common
 
 # Setup Repos
-# PHP
-sudo add-apt-repository -y ppa:ondrej/php
-
 # Docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" | sudo tee /etc/apt/sources.list.d/docker.list
@@ -26,7 +23,7 @@ echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sourc
 
 # Install all the apps I need
 sudo apt update -y
-sudo apt install -y php7.1 php7.1-fpm php7.1-common nodejs rsync syncthing calibre qbittorrent docker-ce git vim meld zsh steam fonts-powerline meld flatpak
+sudo apt install -y nodejs rsync syncthing calibre qbittorrent docker-ce git vim meld zsh steam fonts-powerline meld flatpak
 
 # Flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
