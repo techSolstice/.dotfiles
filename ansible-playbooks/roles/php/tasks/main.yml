@@ -1,0 +1,4 @@
+- name: Setup PHP repo and install the latest
+  become: yes
+  import_tasks: ubuntu.yml
+  when: ansible_distribution == 'Ubuntu'
