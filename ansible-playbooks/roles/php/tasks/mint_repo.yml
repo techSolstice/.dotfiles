@@ -1,4 +1,0 @@
-- name: Setup the repo
-  apt_repository:
-    repo: ppa:ondrej/php
-    codename: xenial

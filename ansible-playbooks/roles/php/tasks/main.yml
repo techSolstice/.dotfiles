@@ -1,9 +1,6 @@
-- name: Setup PHP repo and install the latest on linux mint
-  import_tasks: mint_repo.yml
-  when: ansible_distribution == "Linux Mint"
-
-- import_tasks: ubuntu_repo.yml
-  when: ansible_distribution == "Ubuntu"
+- name: Setup PHP repo and install the latest on ubuntu based
+  import_tasks: ubuntu_repo.yml
+  when: (ansible_distribution == "Linux Mint") or (ansible_distribution == "Ubuntu")
 
 - import_tasks: debian_install.yml
   when: ansible_os_family == "Debian"

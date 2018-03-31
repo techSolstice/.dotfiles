@@ -1,0 +1,14 @@
+- name: Install docker and docker-compose latest versions
+  import_tasks: debian_prereq.yml
+  when: ansible_os_family == "Debian"
+
+- name: Setup the docker repo
+  import_tasks: ubuntu_repo.yml
+  when: (ansible_distribution == "Linux Mint") or (ansible_distribution == "Ubuntu")
+
+- name: Install docker
+  import_tasks: debian_install.yml
+  when: ansible_os_family == "Debian"
+
+- name: Install docker-compose
+  import_tasks: compose_install.yml

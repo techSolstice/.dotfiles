@@ -3,5 +3,5 @@
   tasks:
   - import_role:
       name: php
-    vars:
-      version: 7.2
+  - import_role:
+      name: docker
