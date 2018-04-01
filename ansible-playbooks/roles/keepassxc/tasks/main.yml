@@ -1,0 +1,3 @@
+- name: Setup and install keepassxc
+  import_tasks: ubuntu.yml
+  when: (ansible_distribution == "Linux Mint") or (ansible_distribution == "Ubuntu")

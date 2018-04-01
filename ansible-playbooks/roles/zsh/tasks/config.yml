@@ -1,0 +1,14 @@
+- name: clone OMZ
+  git:
+    repo: git://github.com/robbyrussell/oh-my-zsh.git
+    dest: ~/.oh-my-zsh
+
+- name: move config file over
+  copy:
+    src: .zshrc
+    dest: ~/.zshrc
+
+- name: Change shell
+  user:
+    name: "{{ user }}"
+    shell: /bin/zsh

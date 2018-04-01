@@ -12,3 +12,6 @@
 
 - name: Install docker-compose
   import_tasks: compose_install.yml
+
+- name: Set permissions
+  import_tasks: set_permissions.yml

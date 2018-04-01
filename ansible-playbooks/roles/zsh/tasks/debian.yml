@@ -1,0 +1,7 @@
+- name: Install zsh
+  apt:
+    name: zsh
+
+- name: Install powerline fonts
+  apt:
+    name: fonts-powerline

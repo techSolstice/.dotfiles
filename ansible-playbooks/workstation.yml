@@ -2,6 +2,27 @@
   become: yes
   tasks:
   - import_role:
+      name: neovim
+  - import_role:
       name: php
   - import_role:
       name: docker
+    vars:
+      user: codayblue
+  - import_role:
+      name: node
+  - import_role:
+      name: syncthing
+  - import_role:
+      name: keepassxc
+  - import_role:
+      name: zsh
+    vars:
+      user: root
+
+- hosts: localhost
+  tasks:
+    - import_role:
+        name: zsh
+      vars:
+        user: codayblue

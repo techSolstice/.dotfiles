@@ -1,0 +1,6 @@
+- name: Install ZSH
+  import_tasks: debian.yml
+  when: ansible_os_family == "Debian"
+
+- name: Configure ZSH
+  import_tasks: config.yml

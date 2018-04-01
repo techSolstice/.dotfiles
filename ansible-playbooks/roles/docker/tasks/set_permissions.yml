@@ -1,0 +1,5 @@
+- name: Add docker gorup to the user
+  user:
+    name: "{{ user }}"
+    append: yes
+    groups: docker

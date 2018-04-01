@@ -1,0 +1,8 @@
+- name: Setup keepassxc repo
+  apt_repository:
+    repo: "ppa:phoerious/keepassxc"
+    codename: "{{ release }}"
+
+- name: Install keepassxc
+  apt:
+    name: keepassxc

@@ -1,0 +1,11 @@
+- name: Install calibre
+  apt:
+    name: calibre
+
+- name: Install deluge
+  apt:
+    name: deluge
+
+- name: Install Steam
+  apt:
+    name: steam
