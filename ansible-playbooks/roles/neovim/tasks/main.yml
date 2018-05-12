@@ -1,3 +1,0 @@
-- name: Install and configure neovim
-  import_tasks: ubuntu.yml
-  when: (ansible_distribution == "Linux Mint") or (ansible_distribution == "Ubuntu")

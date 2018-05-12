@@ -1,3 +1,0 @@
-release: xenial
-channel: stable
-compose_version: "1.20.1"

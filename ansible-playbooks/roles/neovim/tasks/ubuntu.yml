@@ -1,8 +1,0 @@
-- name: add neovim ppa
-  apt_repository:
-    repo: ppa:neovim-ppa/stable
-    codename: "{{ release }}"
-
-- name: Install neovim
-  apt:
-    name: neovim

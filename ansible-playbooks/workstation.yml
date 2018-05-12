@@ -2,19 +2,30 @@
   become: yes
   tasks:
   - import_role:
-      name: neovim
-  - import_role:
       name: php
+    vars:
+      version: 7.2
+      release: bionic
   - import_role:
       name: docker
     vars:
       user: codayblue
+      release: xenial
+      channel: edge
+      compose_version: "1.21.0"
   - import_role:
       name: node
+    vars:
+      primary_version: 9
+      release: bionic
   - import_role:
       name: syncthing
   - import_role:
       name: keepassxc
+    vars:
+      release: bionic
+  - import_role:
+      name: fun
   - import_role:
       name: zsh
     vars:
