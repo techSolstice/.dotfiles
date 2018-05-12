@@ -1,13 +1,9 @@
 #!/bin/bash
 
-# Setup Repos
-# Install all the apps I need
-sudo apt update -y
-sudo apt install -y flatpak
-
-# Flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install -y flathub com.discordapp.Discord com.skype.Client com.slack.Slack com.spotify.Client com.uploadedlobster.peek
+# Install snaps
+sudo snap install discord spotify
+sudo snap install --classic skype
+sudo snap install --classic slack
 
 git config --global user.email $1
 git config --global user.name $2

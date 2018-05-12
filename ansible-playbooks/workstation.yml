@@ -10,7 +10,7 @@
       name: docker
     vars:
       user: codayblue
-      release: xenial
+      release: bionic
       channel: edge
       compose_version: "1.21.0"
   - import_role:
