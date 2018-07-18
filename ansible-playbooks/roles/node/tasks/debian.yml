@@ -21,11 +21,6 @@
 
 - name: Setup repos
   apt_repository:
-    repo: "deb https://deb.nodesource.com/node_{{ primary_version }}.x {{ release }} main"
-    update_cache: no
-
-- name: Setup repos
-  apt_repository:
     repo: "deb-src https://deb.nodesource.com/node_{{ primary_version }}.x {{ release }} main"
     update_cache: yes
 
