@@ -16,7 +16,7 @@
   - import_role:
       name: node
     vars:
-      primary_version: 9
+      primary_version: 8
       release: bionic
   - import_role:
       name: syncthing
