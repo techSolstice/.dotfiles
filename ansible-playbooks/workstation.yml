@@ -12,7 +12,7 @@
       user: codayblue
       release: bionic
       channel: stable
-      compose_version: "1.21.0"
+      compose_version: "1.22.0"
   - import_role:
       name: node
     vars:
@@ -33,6 +33,11 @@
 
 - hosts: localhost
   tasks:
+    - import_role:
+        name: git
+      vars:
+        email: codayblue@gmail.com
+        username: codayblue
     - import_role:
         name: zsh
       vars:

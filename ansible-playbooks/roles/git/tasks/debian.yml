@@ -1,0 +1,22 @@
+- name: Install git
+  apt:
+    name: git
+    state: latest
+  become: yes
+
+- name: Install Meld (merge and diff tool)
+  apt:
+    name: meld
+    state: latest
+  become: yes
+
+- name: Copy Global Ignore Config
+  copy:
+    src: .gitignore_global
+    dest: ~/.gitignore_global
+  register: gitignore_global_output
+
+- name: Configure git
+  template:
+    src: gitconfig.j2
+    dest: ~/.gitconfig
