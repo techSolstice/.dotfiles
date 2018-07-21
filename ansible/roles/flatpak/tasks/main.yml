@@ -1,0 +1,28 @@
+- name: Install Flatpak
+  import_tasks: ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
+
+- name: Setup Flathub
+  flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+
+- name: Install Discord
+  flatpak:
+    name: com.discordapp.Discord
+    remote: flathub
+
+- name: Install Skype
+  flatpak:
+    name: com.skype.Client
+    remote: flathub
+
+- name: Install Slack
+  flatpak:
+    name: com.slack.Slack
+    remote: flathub
+
+- name: Install Spotify
+  flatpak:
+    name: com.spotify.Client
+    remote: flathub

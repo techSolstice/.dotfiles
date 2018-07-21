@@ -30,6 +30,8 @@
       name: zsh
     vars:
       user: root
+  - import_role:
+      name: flatpak
 
 - hosts: localhost
   tasks:
