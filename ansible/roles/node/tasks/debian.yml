@@ -19,7 +19,12 @@
     url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
     state: present
 
-- name: Setup repos
+- name: setup repo
+  apt_repository:
+    repo: "deb https://deb.nodesource.com/node_{{ primary_version }}.x {{ release }} main"
+    update_cache: yes
+
+- name: Setup src repo
   apt_repository:
     repo: "deb-src https://deb.nodesource.com/node_{{ primary_version }}.x {{ release }} main"
     update_cache: yes

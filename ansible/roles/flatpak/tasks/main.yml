@@ -26,3 +26,8 @@
   flatpak:
     name: com.spotify.Client
     remote: flathub
+
+- name: Install VS Code
+  flatpak:
+    name: com.visualstudio.code
+    remote: flathub
