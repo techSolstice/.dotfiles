@@ -6,6 +6,7 @@
 *.iws
 *.ipr
 .idea/
+.vscode/
 
 # Eclipse
 .settings/
